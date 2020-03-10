@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardData } from '../home/card.data';
+import { CardData } from './card.data';
 
 @Component({
   selector: 'app-donor',

@@ -1,0 +1,45 @@
+<ion-content >
+  <ion-grid style="height: 20%;">
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="ion-text-center">
+        <img src="/assets/logo/sos-mi-tipo-horizontal-12.svg"
+             [height]="logoHeight"
+             [width]="logoWidth">
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item no-margin lines="none" padding-start padding-end>
+    <ion-icon color="medium" name="ios-pin" type="ios"></ion-icon>
+    <ion-label color="medium" class="campaign-label">Campañas</ion-label>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-img *ngIf="!campaigns?.length" src="assets/notification.png" style="width: 50%; height: 50%; margin-left:25%; margin-top:20%;"></ion-img>
+      <ion-col class="ion-text-center">
+        <ion-list *ngIf="campaigns">
+          <ion-item-sliding padding-end  #itemSliding *ngFor="let campaign of campaigns" (click)="openButtons(itemSliding)">
+            <ion-item>
+              <ion-icon [routerLink]="['/campaigns', campaign.id]" class="icon-size" src="assets/logo/ok-14.svg" slot="start"></ion-icon>
+              <ion-label margin-bottom class="campaign-label">{{campaign.qty_donants}} donantes de sangre {{campaign.bloods[0].blood_type}} ... |
+                <span class="district-bold">{{campaign.hospital.name}}</span>
+              </ion-label>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option style="background: #E84256" (click)="delete(campaign.id)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-item-option>
+              <ion-item-option style="background: #66DDB3">
+                <ion-icon slot="icon-only" (click)="openNotify(campaign.id)" name="mail-unread"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer></app-footer>

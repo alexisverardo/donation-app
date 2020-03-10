@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  api_endpoint: 'http://localhost:8000/api',
-  url_endpoint: 'http://localhost:8000/'
+  ENDPOINT: 'http://www.sosmitipo.tk',
+  api_endpoint: 'http://www.sosmitipo.tk/api',
+  url_endpoint: 'http://www.sosmitipo.tk/'
 };
 
 /*

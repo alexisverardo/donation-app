@@ -1,45 +1,70 @@
 <ion-content >
 
-  <ion-grid>
+  <ion-grid style="height: 20%;">
     <ion-row>
       <ion-col size="2"></ion-col>
       <ion-col class="ion-text-center">
-        <img src="/assets/sosmitipo.png"
+        <img src="/assets/logo/sos-mi-tipo-horizontal-12.svg"
              [height]="logoHeight"
              [width]="logoWidth">
-        <ion-text color="secondary">
-          <h3>SOS MI TIPO</h3>
-        </ion-text>
-        <p class="slogan">Donar sangre salva vidas</p>
       </ion-col>
       <ion-col size="2"></ion-col>
     </ion-row>
   </ion-grid>
 
+  <ion-item no-margin lines="none" padding-start padding-end>
+      <ion-icon color="medium" name="ios-pin" type="ios"></ion-icon>
+      <ion-label color="medium" class="campaign-label">Cerca de tu ubicación</ion-label>
+  </ion-item>
+
   <ion-grid>
-
     <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-list>
+          <ion-item padding-end>
+            <ion-icon class="icon-size" src="assets/logo/ok-14.svg" slot="start"></ion-icon>
+            <ion-label margin-bottom class="campaign-label">5 donantes de sangre A+ |
+              <span class="district-bold">San Rafael</span>
+            </ion-label>
+          </ion-item>
+          <ion-item padding-end>
+            <ion-icon class="icon-size" src="assets/logo/ok-14.svg" slot="start"></ion-icon>
+            <ion-label margin-bottom class="campaign-label">5 donantes de sangre A- |
+              <span class="district-bold">San Rafael</span>
+            </ion-label>
+          </ion-item>
+          <ion-item padding-end>
+            <ion-icon class="icon-size" src="assets/logo/ok-14.svg" slot="start"></ion-icon>
+            <ion-label margin-bottom class="campaign-label">10 donantes de sangre A- |
+              <span class="district-bold">25 de Mayo</span>
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none" padding-end>
+            <ion-icon class="icon-size" src="assets/logo/ok-14.svg" slot="start"></ion-icon>
+            <ion-label margin-bottom class="campaign-label">2 donantes de sangre 0- |
+              <span class="district-bold">Villa Atuel</span>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row padding-start padding-end>
       <ion-col>
-        <ion-button routerLink="/solicitar" expand="full" size="large" style="--background: #660366">
+        <ion-button routerLink="/send-notification" mode="md" shape="round" color="dark" size="large" expand="full">
           Solicitar Donantes
-          <ion-icon slot="start" name="heart"></ion-icon>
         </ion-button>
       </ion-col>
-
       <ion-col>
-        <ion-button routerLink="/donor" expand="full" size="large" style="--background: #5cb85c">
-          Quiero Ser Donante
-          <ion-icon slot="start" name="water"></ion-icon>
+        <ion-button routerLink="/donor" routerDirection="forward" mode="md" shape="round" color="danger" size="large" expand="full">
+          Ser Donante
         </ion-button>
       </ion-col>
-
-      <!--<ion-col>-->
-        <!--<ion-button routerLink="/campañas" expand="full" size="large" style="&#45;&#45;background: #ff8c00">-->
-          <!--Campañas-->
-          <!--<ion-icon slot="start" name="information-circle"></ion-icon>-->
-        <!--</ion-button>-->
-      <!--</ion-col>-->
     </ion-row>
   </ion-grid>
 
 </ion-content>
+<app-footer></app-footer>

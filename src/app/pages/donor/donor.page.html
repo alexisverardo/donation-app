@@ -1,19 +1,19 @@
-<app-header title="Quiero Ser Donante"></app-header>
+<app-header title="Ser donante"></app-header>
 
-<ion-content>
+<ion-content padding>
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <ion-card routerLink="/" justify-content-center style="--background: #df4f3f;">
+        <ion-card padding-top padding-bottom routerLink="/test" justify-content-center color="danger">
 
-          <ion-card-header no-padding padding-top>
+          <ion-card-header no-padding>
             <ion-card-title text-center>
-              <ion-icon style="zoom:2.0;" name="checkbox-outline"></ion-icon>
+              <ion-icon mode="md" style="zoom:1.5;" name="checkbox-outline"></ion-icon>
             </ion-card-title>
           </ion-card-header>
 
-          <ion-card-content no-padding padding-bottom text-center>
-            Test Puedo Ser Donante
+          <ion-card-content no-padding text-center>
+            Test puedo ser donante
           </ion-card-content>
 
         </ion-card>
@@ -21,16 +21,16 @@
     </ion-row>
 
     <ion-row>
-      <ion-col size="6" *ngFor="let card of cards">
+      <ion-col no-padding size="6" *ngFor="let card of cards">
 
-        <ion-card routerLink="{{ card.router }}" justify-content-center [style.background]="card.background">
-          <ion-card-header no-padding padding-top>
+        <ion-card padding-top padding-bottom routerLink="{{ card.router }}" justify-content-center [style.background]="card.background">
+          <ion-card-header no-padding>
             <ion-card-title text-center>
-              <ion-icon style="zoom:2.0;" name="{{ card.icon }}"></ion-icon>
+              <ion-icon mode="md" style="zoom:1.5;" name="{{ card.icon }}"></ion-icon>
             </ion-card-title>
           </ion-card-header>
 
-          <ion-card-content no-padding padding-bottom="" text-center>
+          <ion-card-content no-padding text-center>
             {{ card.title }}
           </ion-card-content>
 
@@ -39,3 +39,4 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<app-footer></app-footer>

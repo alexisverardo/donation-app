@@ -1,57 +1,53 @@
-<ion-content padding>
+<ion-content>
 
-  <ion-grid>
+  <ion-grid margin-bottom>
     <ion-row>
       <ion-col size="2"></ion-col>
       <ion-col class="ion-text-center">
         <img
-            src="/assets/sosmitipo.png"
+            src="/assets/logo/logo.svg"
             [height]="logoHeight"
             [width]="logoWidth">
-        <ion-text color="secondary">
-          <h3>SOS MI TIPO</h3>
-        </ion-text>
-        <p class="slogan">Donar sangre salva vidas</p>
       </ion-col>
       <ion-col size="2"></ion-col>
     </ion-row>
   </ion-grid>
 
-  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+  <!------------------------------->
+  <!---------- Init Form ---------->
+  <!------------------------------->
 
+  <form [formGroup]="loginForm" class="form-container" (ngSubmit)="login()">
     <ion-item no-padding>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="email" clearInput required></ion-input>
+      <ion-input class="custom-input" autocapitalize="sentences" formControlName="identity" placeholder="Usuario o Correo" required></ion-input>
+      <ion-icon class="icon-login" mode="md" no-margin name="contact" slot="end"></ion-icon>
     </ion-item>
-    <ion-item no-padding>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input clearInput required type="password" formControlName="password"></ion-input>
+    <ion-item margin-bottom no-padding>
+      <ion-input autocapitalize="sentences" required type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+      <ion-icon class="icon-login" mode="md" name="eye" no-margin slot="end"></ion-icon>
     </ion-item>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col no-padding size="4">
-          <ion-item lines="none" no-padding float-left>
-            <ion-checkbox no-padding color="primary"></ion-checkbox>
-            <ion-label class="remember-me">Recordarme</ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item class=" align-text-end no-padding" lines="none" no-padding>
-            <ion-label text-right no-padding>
-              <a routerLink="/" class="forget-password">¿Olvidaste tu contraseña?</a>
-            </ion-label>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <!--<ion-item lines="none" margin-top="60" margin-bottom="60" no-padding float-left>-->
+      <!--<ion-checkbox formControlName="remember_me" no-padding color="primary" checked="false"></ion-checkbox>-->
+      <!--<ion-label class="remember-me">Recordarme</ion-label>-->
+    <!--</ion-item>-->
 
-    <ion-button color="danger" size="full" type="submit">Login</ion-button>
+    <ion-button margin-top mode="md" shape="round" color="danger" size="large" expand="full" type="submit">Iniciar</ion-button>
 
   </form>
 
+  <!------------------------------->
+  <!-------- End Init Form -------->
+  <!------------------------------->
+
   <ion-grid no-padding>
     <ion-row justify-content-center>
+      <ion-item lines="none" >
+        <ion-label text-right>
+          <a routerLink="/" class="forget-password">¿Olvidaste tu contraseña?</a>
+        </ion-label>
+      </ion-item>
+
       <ion-item lines="none">
         <ion-text class="account-text" color="medium">¿No tenes cuenta? <a class="register-text" routerLink="/register">Registrate</a></ion-text>
       </ion-item>

@@ -12,19 +12,27 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
   logoHeight = 150;
   logoWidth = 125;
+  loginForm: FormGroup;
+  redirectTo = '/home';
 
   constructor(
       private loginServices: LoginService,
       private formBuilder: FormBuilder,
       public alertController: AlertController,
       private router: Router
-  ) { }
+  ) {
+      this.redirectIfAuthenticated();
+  }
 
-    loginForm: FormGroup;
+  async redirectIfAuthenticated() {
+      if (await this.loginServices.isAuthenticated()) {
+          this.router.navigate([this.redirectTo]);
+      }
+  }
 
   ngOnInit() {
       this.loginForm  =  this.formBuilder.group({
-          email: ['', Validators.required],
+          identity: ['', Validators.required],
           password: ['', Validators.required]
       });
   }
@@ -35,12 +43,8 @@ export class LoginPage implements OnInit {
       }
 
       this.loginServices.login(this.loginForm.value).subscribe(
-          data => {
-              this.router.navigate(['/home']);
-              },
-          error => {
-              this.presentAlert();
-          }
+          data => this.router.navigate([this.redirectTo]),
+          error => this.presentAlert()
       );
     }
 

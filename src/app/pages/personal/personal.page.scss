@@ -1,0 +1,24 @@
+.icon-login {
+  color: #86888f;
+}
+
+ion-item-divider {
+  --color: #ffffff;
+}
+
+ion-input, ion-select {
+  --placeholder-color: #86888f;
+  --placeholder-opacity: 1;
+  --padding-bottom: 25px;
+  --padding-top: 20px;
+}
+
+ion-label {
+  --color: #86888f !important;
+}
+
+ion-datetime {
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+  //--padding-top: 20px;
+}

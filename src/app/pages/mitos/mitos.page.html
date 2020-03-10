@@ -1,0 +1,24 @@
+<app-header [title]="'Mitos'"></app-header>
+
+<ion-content>
+  <ion-card color="light" *ngFor="let m of Myths">
+    <ion-card-header>
+      <ion-card-subtitle>{{m.title}}</ion-card-subtitle>
+      <ion-card-title>{{m.status}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-img [src]="m.icon"></ion-img>
+          </ion-col>
+          <ion-col size="8">
+            {{m.content}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<app-footer></app-footer>

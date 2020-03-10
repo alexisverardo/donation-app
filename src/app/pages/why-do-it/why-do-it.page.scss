@@ -1,0 +1,40 @@
+ion-content, ion-item {
+  --background: #F2F3F4;
+}
+
+.title {
+  font-size: 1.5rem !important;
+  --color: #E84256 !important;
+  --margin-bottom: 4px;
+}
+
+#title2 {
+  font-size: 1.3rem !important;
+  font-weight: 600;
+}
+
+ion-card {
+  --background: #E5EAEB;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#promotion, #to-be-aware {
+  --background: #F2F3F4;
+}
+
+.promotion-h1 {
+  font-size: 1.1rem !important;
+}
+
+.promotion-h2 {
+  font-size: 1rem !important;
+}
+
+.bold-card {
+  font-weight: bold;
+}
+
+.font-promotion {
+  font-size: 1rem;
+}

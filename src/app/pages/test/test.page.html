@@ -1,0 +1,57 @@
+<app-header title="Test"></app-header>
+<ion-content padding>
+  <ion-slides #slides [options]="slideOpts">
+
+    <ion-slide *ngFor="let t of tests">
+
+      <ion-card padding-top padding-bottom justify-content-between mode="md" color="light">
+          <img margin class="test" [src]="t.src" alt="test image">
+        <ion-card-header>
+          <ion-card-subtitle>{{t.question}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content no-padding>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="4">
+                  <ion-button (click)="onChangeHandler($event, t)" no-padding mode="md" shape="round" color="danger" expand="block">SI</ion-button>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-button (click)="onChangeHandler($event, t)" mode="md" shape="round" color="dark" expand="block">NO</ion-button>
+                </ion-col>
+                <ion-col size="2"></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+      </ion-card>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <ion-card padding-top mode="md" color="light" *ngIf="isEnd && !result else canDonate">
+        <img src="/assets/logo/error.png" alt="cant donate">
+        <ion-card-header>
+          <ion-card-subtitle margin-top>Oh! Lamentablemente no podes</ion-card-subtitle>
+          <ion-card-subtitle>ser donante.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content></ion-card-content>
+      </ion-card>
+
+
+      <ng-template #canDonate>
+        <ion-card padding-top mode="md" color="light">
+          <img src="/assets/logo/ok.png" alt="can donate">
+          <ion-card-header>
+            <ion-card-subtitle class="blood-color" margin-top>¡Que alegria!</ion-card-subtitle>
+            <ion-card-subtitle class="blood-color">Podés ser donante!</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content></ion-card-content>
+        </ion-card>
+      </ng-template>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+<app-footer></app-footer>

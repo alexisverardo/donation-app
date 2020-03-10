@@ -1,0 +1,27 @@
+.title {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+ion-content {
+  --padding-top: 15px;
+  --padding-start: 35px;
+  --padding-end: 30px;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.red {
+  background: #E84256;
+  border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  text-align: center;
+  margin-right: 5px;
+  width: 1.6em;
+}

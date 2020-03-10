@@ -13,7 +13,11 @@ ion-card-content, ion-card-content, ion-icon {
 }
 
 ion-card-content {
-  font-size: 1rem;
+  font-size: 1.1rem;
+}
+
+ion-item {
+  --padding-top: 10px;
 }
 
 .slogan {
@@ -33,4 +37,20 @@ h3 {
   color: #e43434;
   margin: 0 auto;
   font-weight: bold;
+}
+
+.campaign-label {
+  font-size: 1rem;
+}
+
+.district-bold {
+  font-weight: bold;
+}
+
+.icon-size {
+  font-size: 2rem;
+}
+
+.pin-label {
+  --color: #86888f;
 }

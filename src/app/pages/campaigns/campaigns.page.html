@@ -1,0 +1,60 @@
+<app-header *ngIf="campaign" title="{{campaign.first_name}} {{campaign.last_name}}"></app-header>
+<ion-content *ngIf="campaign">
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" *ngFor="let blood of campaign.bloods">
+          <img src="assets/types-blood/{{blood.blood_type}}.svg">
+        </ion-col>
+      </ion-row>
+      <ion-toolbar>
+        <ion-title>
+          Faltan
+        </ion-title>
+      </ion-toolbar>
+      <ion-row>
+        <ion-col size="4"></ion-col>
+        <ion-col size="4">
+          <div class="qty-donants"><h1>{{campaign.qty_donants}}</h1></div>
+        </ion-col>
+        <ion-col size="4"></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+      <ion-label style="text-align: center">{{campaign.hospital.name}}</ion-label>
+    </ion-item>
+    <ion-item  *ngFor="let date of campaign.campaign_dates">
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              {{date.initDate | date: 'EEEE d'}} de {{date.initDate | date: 'MMMM'}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              desde {{date.initDate | date: 'h:mm a'}} hasta {{date.endDate | date:'h:mm a'}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+    <br>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="accept(campaign.id)"  mode="md" shape="round" style="--background:#66DDB3" size="large" expand="full">
+          Aceptar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar (click)="delete(campaign.id)">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rechazar</ion-title>
+  </ion-toolbar>
+</ion-content>
+<app-footer></app-footer>

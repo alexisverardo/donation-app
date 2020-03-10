@@ -33,6 +33,21 @@ ion-checkbox {
   margin-right: 10px !important;
 }
 
+ion-input, ion-select {
+  --placeholder-color: #86888f;
+  --placeholder-opacity: 1;
+  --padding-bottom: 25px;
+  --padding-top: 20px;
+}
+
+ion-label {
+  --color: #86888f !important;
+}
+
 .emergency-text {
   font-size: 0.8rem;
+}
+
+.icon-login {
+  color: #86888f;
 }

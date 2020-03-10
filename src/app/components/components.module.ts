@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-      HeaderComponent
+      HeaderComponent,
+      FooterComponent
   ],
   exports: [
-      HeaderComponent
+      HeaderComponent,
+      FooterComponent
   ],
   imports: [
       CommonModule,
       IonicModule,
-      RouterModule
+      RouterModule,
   ]
 })
 export class ComponentsModule { }

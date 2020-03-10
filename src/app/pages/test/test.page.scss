@@ -1,0 +1,53 @@
+.swiper-slide img {
+  max-width: 57%;
+  margin: 0 auto;
+}
+ion-content{
+  display: block;
+  vertical-align: middle;
+}
+
+ion-card {
+  cursor: alias;
+  width: 100%;
+  //height: 363px;
+}
+
+ion-card-content, ion-card-content, ion-icon {
+  color: white;
+}
+
+ion-card-content {
+  font-size: 1rem;
+}
+
+ion-card-title {
+  font-size: 1rem !important;
+}
+
+.slogan {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+img{
+  height: 20vh;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+
+h3 {
+  color: #e43434;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.test {
+  height: 100px;
+}
+
+.blood-color {
+  color: #e43434 !important;
+}
