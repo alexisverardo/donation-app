@@ -1,0 +1,62 @@
+img{
+  height: 20vh;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+
+h3 {
+  color: #e43434;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.slogan {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.login-margin {
+  margin-top: 50px;
+}
+
+.forget-password {
+  color: #e43434;
+  font-size: 0.8rem;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.remember-me {
+  font-size: 0.8rem;
+  padding-left: 5px !important;
+}
+
+.account-text {
+  font-size: 0.8rem;
+  color: #86888f;
+}
+
+.register-text {
+  color: #1e2023;
+  font-weight: bold;
+  text-decoration: none;
+}
+.align-text-end {
+  text-align: end;
+}
+
+ion-item {
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --background: rgba(0,0,0,0);
+}
+
+ion-list {
+  --background: rgba(0,0,0,0);
+}
+
+ion-label {
+  font-weight: 500;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "sosmitipo_front",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,63 @@
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="ion-text-center">
+        <img
+            src="/assets/sosmitipo.png"
+            [height]="logoHeight"
+            [width]="logoWidth">
+        <ion-text color="secondary">
+          <h3>SOS MI TIPO</h3>
+        </ion-text>
+        <p class="slogan">Donar sangre salva vidas</p>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+
+    <ion-item no-padding>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" clearInput required></ion-input>
+    </ion-item>
+    <ion-item no-padding>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input clearInput required type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col no-padding size="4">
+          <ion-item lines="none" no-padding float-left>
+            <ion-checkbox no-padding color="primary"></ion-checkbox>
+            <ion-label class="remember-me">Recordarme</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item class=" align-text-end no-padding" lines="none" no-padding>
+            <ion-label text-right no-padding>
+              <a routerLink="/" class="forget-password">¿Olvidaste tu contraseña?</a>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button color="danger" size="full" type="submit">Login</ion-button>
+
+  </form>
+
+  <ion-grid no-padding>
+    <ion-row justify-content-center>
+      <ion-item lines="none">
+        <ion-text class="account-text" color="medium">¿No tenes cuenta? <a class="register-text" routerLink="/register">Registrate</a></ion-text>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

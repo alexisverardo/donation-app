@@ -1,0 +1,41 @@
+<app-header title="Quiero Ser Donante"></app-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card routerLink="/" justify-content-center style="--background: #df4f3f;">
+
+          <ion-card-header no-padding padding-top>
+            <ion-card-title text-center>
+              <ion-icon style="zoom:2.0;" name="checkbox-outline"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content no-padding padding-bottom text-center>
+            Test Puedo Ser Donante
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" *ngFor="let card of cards">
+
+        <ion-card routerLink="{{ card.router }}" justify-content-center [style.background]="card.background">
+          <ion-card-header no-padding padding-top>
+            <ion-card-title text-center>
+              <ion-icon style="zoom:2.0;" name="{{ card.icon }}"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content no-padding padding-bottom="" text-center>
+            {{ card.title }}
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

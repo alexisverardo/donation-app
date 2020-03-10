@@ -1,0 +1,45 @@
+<ion-content >
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col class="ion-text-center">
+        <img src="/assets/sosmitipo.png"
+             [height]="logoHeight"
+             [width]="logoWidth">
+        <ion-text color="secondary">
+          <h3>SOS MI TIPO</h3>
+        </ion-text>
+        <p class="slogan">Donar sangre salva vidas</p>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-button routerLink="/solicitar" expand="full" size="large" style="--background: #660366">
+          Solicitar Donantes
+          <ion-icon slot="start" name="heart"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button routerLink="/donor" expand="full" size="large" style="--background: #5cb85c">
+          Quiero Ser Donante
+          <ion-icon slot="start" name="water"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <!--<ion-col>-->
+        <!--<ion-button routerLink="/campañas" expand="full" size="large" style="&#45;&#45;background: #ff8c00">-->
+          <!--Campañas-->
+          <!--<ion-icon slot="start" name="information-circle"></ion-icon>-->
+        <!--</ion-button>-->
+      <!--</ion-col>-->
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

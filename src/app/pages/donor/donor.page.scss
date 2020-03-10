@@ -1,0 +1,21 @@
+.getstart {
+  background-image: url('../../../assets/wallpaper.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+ion-content{
+  --background: #fff url('../../../assets/wallpaper.png') no-repeat center center / cover;
+}
+
+ion-card {
+  cursor: alias;
+}
+
+ion-card-content, ion-card-content, ion-icon {
+  color: white;
+}
+
+ion-card-content {
+  font-size: 1rem;
+}

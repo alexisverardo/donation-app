@@ -1,0 +1,128 @@
+<app-header title="Donar Sangre"></app-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-avatar style="margin: auto !important;" class="item-avatar">
+              <img src="/assets/default-avatar.png">
+            </ion-avatar>
+
+            <!------------------ First Name ------------------------>
+            <ion-item>
+              <ion-input formControlName="first_name" type="text" placeholder="Nombre" required></ion-input>
+              <ion-icon name="person" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End First Name ------------------------>
+
+            <!------------------ Last Name ------------------------>
+            <ion-item>
+              <ion-input formControlName="last_name" type="text" placeholder="Apellido" required></ion-input>
+              <ion-icon name="person" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Last Name ------------------------>
+
+            <!------------------ Genre ------------------------>
+            <ion-item>
+              <ion-label>Genero</ion-label>
+              <ion-select formControlName="genre" required cancel-text="Cancelar" ok-text="Aceptar">
+                <ion-select-option value="female">Femenino</ion-select-option>
+                <ion-select-option value="male">Masculino</ion-select-option>
+              </ion-select>
+              <ion-icon name="male" slot="end"></ion-icon>
+              <ion-icon name="female" class="female-icon" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Genre ------------------------>
+
+            <!------------------ Blood Type ------------------------>
+            <ion-list>
+              <ion-radio-group formControlName="blood_type_id">
+                <ion-list-header>
+                  <ion-label>Grupo Sanguineo</ion-label>
+                </ion-list-header>
+                <ion-grid>
+                  <ion-row *ngIf="(bloodTypes$ | async) as bloodGroup">
+                    <ion-col size="4" *ngFor="let bloodType of bloodGroup">
+                      <ion-item no-padding lines="none">
+                        <ion-label no-padding>{{ bloodType.blood_type }}</ion-label>
+                        <ion-radio no-padding slot="start" value="{{ bloodType.id }}"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-radio-group>
+            </ion-list>
+            <!------------------ End Blood Type ------------------------>
+
+            <ion-item-divider></ion-item-divider>
+
+            <!------------------ Birthday ------------------------>
+            <ion-item>
+              <ion-datetime no-padding formControlName="birthday" cancel-text="Cancelar" done-text="Aceptar"
+                            required placeholder="Fecha de Nacimiento"></ion-datetime>
+              <ion-icon name="calendar" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Birthday ------------------------>
+
+            <!------------------ Province ------------------------>
+            <ion-item *ngIf="(provinces$ | async) as provinces">
+              <ion-label>Provincia</ion-label>
+              <ion-select formControlName="province_id" required cancel-text="Cancelar" ok-text="Aceptar">
+                <ion-select-option *ngFor="let province of provinces" [value]="province.id">{{ province.province_name }}</ion-select-option>
+                <ion-icon name="flag" slot="end"></ion-icon>
+              </ion-select>
+            </ion-item>
+            <!------------------ End Province ------------------------>
+
+            <!------------------ Location ------------------------>
+            <ion-item *ngIf="(locations$ | async) as locations">
+              <ion-label>Localidad</ion-label>
+              <ion-select formControlName="location_id" required cancel-text="Cancelar" ok-text="Aceptar">
+                <ion-select-option *ngFor="let locations of locations" [value]="locations.id">{{ locations.location_name }}</ion-select-option>
+                <ion-icon name="locate" slot="end"></ion-icon>
+              </ion-select>
+            </ion-item>
+            <!------------------ End Location ------------------------>
+
+            <!------------------ Email ------------------------>
+            <ion-item>
+              <ion-input formControlName="email" type="email" placeholder="Correo electronico" required></ion-input>
+              <ion-icon name="at" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Email ------------------------>
+
+            <!------------------ Password ------------------------>
+            <ion-item>
+              <ion-input formControlName="password" type="password" placeholder="Contraseña" required></ion-input>
+              <ion-icon name="eye-off" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Password ------------------------>
+
+            <!------------------ Confirm Password ------------------------>
+            <ion-item>
+              <ion-input formControlName="confirm_password" type="password" placeholder="Repetir Contraseña" required></ion-input>
+              <ion-icon name="eye-off" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Confirm Password ------------------------>
+
+            <!------------------ Last Date Donation ------------------------>
+            <ion-item>
+              <ion-datetime no-padding formControlName="last_date_donation" cancel-text="Cancelar" done-text="Aceptar"
+                            required placeholder="Ultima fecha de donación"></ion-datetime>
+              <ion-icon name="calendar" slot="end"></ion-icon>
+            </ion-item>
+            <!------------------ End Last Date Donation ------------------------>
+
+          </div>
+
+          <div padding>
+            <ion-button type="submit" color="danger" expand="full">Registrar</ion-button>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
